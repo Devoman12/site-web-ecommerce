@@ -1,0 +1,20 @@
+
+-----------------------------
+__Products__
+id  11
+name 20
+price 20
+image varchar
+Availability 1or0
+Condition 30
+Brand 50
+category 50
+date auto
+
+-----------------------------
+__users__
+id
+Name
+email
+password
+#fav_id
