@@ -1,4 +1,11 @@
-<?php include("path.php");?>
+<?php 
+
+include("path.php");
+include(ROOT_PATH . "/controlers/register.php");
+
+
+?>
+
 
 <!DOCTYPE html>
 <html lang="en">

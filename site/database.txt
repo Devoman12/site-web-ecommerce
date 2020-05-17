@@ -14,7 +14,18 @@ date auto
 -----------------------------
 __users__
 id
-Name
+name
 email
 password
 #fav_id
+
+
+
+
+Product
+
+
+Shopper Information  => name price
+Bill To =>  Availability Condition 
+          => Brand  category
+            => image 
