@@ -4,9 +4,7 @@ include("path.php");
 include(ROOT_PATH . "/controlers/pro.php");
 
 
-
 ?>
-
 
 <!DOCTYPE html>
 <html lang="en">
@@ -22,63 +20,77 @@ include(ROOT_PATH . "/controlers/pro.php");
 	
 	<section id="cart_items">
 		<div class="container">
+		<div class="register-req">
+				<p></p>
+			</div>
+
+			<div >
+				<h2>Statistics</h2>
+			</div>
+
 
             <div class="register-req">
 				<p></p>
 			</div>
+			<div >
+				<h2>Add Product</h2>
+			</div>
 
-            <form id="main-contact-form" class="contact-form row" name="contact-form" action="addProd.php" method="post">
+			<div>
+				<br>
+			</div>
+
+            <form id="main-contact-form" class="contact-form row" name="contact-form" action="addProd.php" method="post" enctype="multipart/form-data">
 
 				<div class="form-group col-md-6">
 				    <input type="text" name="name" class="form-control" required="required" placeholder="Name">
 				</div>
 
-                <div class="form-group col-md-4">
-				    <input type="text" name="price" class="form-control" required="required" placeholder="price">
-				</div>
-
-                <div class="form-group col-md-2">
-				    <a href="">$</a>
+                <div class="form-group col-md-6">
+				    <!-- <input type="text" name="price" class="form-control" required="required" placeholder="price"> -->
+					<input type="number" name="price" class="form-control" required="required" placeholder="price" min="1" max="9999999999">
 				</div>
 
 				<div class="form-group col-md-6">
+					<h5>availability</h5>
                     <select name="availability">
-						<option>-- Availability --</option>
-						<option value='1'>Yes</option>
-                        <option value='0'>No</option>
+						<option  value='1'>Yes</option>
+                        <option  value='0'>No</option>
 					</select>
 				</div>
 
+
                 <div class="form-group col-md-6">
+					<h5>condition</h5>
                     <select name="condition">
-						<option>-- Condition  --</option>
-						<option>New</option>
-                        <option>used</option>
-                        <option>Other</option>
+						<option value="New" >New</option>
+                        <option value="used" >used</option>
+                        <option value="Other" >Other</option>
 					</select>
 				</div>
                 
                 <div class="form-group col-md-6">
+					<h5>brand</h5>
                     <select name="brand">
-						<option>-- brand  --</option>
-						<option>nike</option>
-                        <option>adidas</option>
+						<option value="nike" >nike</option>
+                        <option value="adidas" >adidas</option>
 					</select>
 				</div>
 
                 <div class="form-group col-md-6">
+					<h5>category</h5>
                     <select name="category">
-						<option>-- category  --</option>
-						<option>women</option>
-                        <option>man</option>
-                        <option>kids</option>
+						<option value="women" >women</option>
+                        <option value="man" >man</option>
+                        <option value="kids" >kids</option>
 					</select>
 				</div>
 
-                <div class="form-group col-md-12 form-control">
-                    <input type="file" name="image" id="profile-img">
+                <div class="form-group col-md-12 ">
+					<h5>image</h5>
+                    <input type="file" name="pro_image" id="profile-img">
 				</div> 
-                <div class="form-group col-md-12">
+                <div class="form-group col-md-12 form-control">
                     <img src="" id="profile-img-tag" width="99%" />
                     <script type="text/javascript">
                         function readURL(input) {
@@ -92,13 +104,78 @@ include(ROOT_PATH . "/controlers/pro.php");
                     </script>
 				</div> 
 
-				<div class="form-group col-md-11">
+				<div class="form-group col-md-12">
 				    <input type="submit" name="add" class="btn btn-primary pull-right" value="Submit">
 				</div>
 
 			</form>
+			
+			<div class="register-req">
+				<p></p>
+			</div>
+			
+			<div >
+				<h2>all Products</h2>
+			</div>
+			
 
+			<!-- Style for table products -->
+				<style>
+					table {
+					font-family: arial, sans-serif;
+					border-collapse: collapse;
+					width: 100%;
+					}
 
+					td, th {
+					border: 1px solid #dddddd;
+					text-align: left;
+					padding: 8px;
+					}
+
+					tr:nth-child(even) {
+					background-color: #dddddd;
+					}
+					tr:hover {background-color: #A7f5f7;}
+				</style>
+			<!-- /Style for table products -->
+			<table>
+                <thead>
+                    <th>N</th>
+                    <th>name</th>
+					<th>price</th>
+					<th>condition</th>
+					<th>category</th>
+					<th>brand</th>
+					<th>availability</th>
+                    <th colspan="3">Action</th>
+                </thead>
+                <tbody>
+				<?php foreach($products as $key => $product): ?>
+                    <tr>
+                    	<td><?php echo $key + 1; ?></td>
+						<td><?php echo $product['name'] ?></td>
+						<td><?php echo $product['price'] ?></td>
+						<td><?php echo $product['condition'] ?></td>
+						<td><?php echo $product['category'] ?></td>
+						<td><?php echo $product['brand'] ?></td>
+
+						<?php if($product['availability']): ?>
+                            <td><a href="edit.php?availability=0&p_id=<?php echo $product['id']; ?>" class="unpublish">yes</a></td>
+                        <?php else: ?>
+                            <td><a href="edit.php?availability=1&p_id=<?php echo $product['id']; ?>" class="publish">no</a></td>
+						<?php endif; ?>
+
+						<td><a href="edit.php?id=<?php echo $product['id']; ?>" class="edit">edite</a></td>
+                        <td><a href="edit.php?delate_id=<?php echo $product['id']; ?>" class="Delate">Delate</a></td>
+                    </tr>
+                <?php endforeach ;?>
+                </tbody>
+            </table>
+
+			<div class="register-req">
+				<p></p>
+			</div>
 
 		</div>
 	</section> <!--/#cart_items-->
