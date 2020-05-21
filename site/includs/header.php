@@ -45,12 +45,9 @@
 									<li><a href="#"><i class="fa fa-user"></i> <?php echo $_SESSION['name']; ?></a></li>
 									<li><a href="#"><i class="fa fa-star"></i> Wishlist</a></li>
 									<li><a href="contact-us.html">Contact</a></li>
-									<li><a href="login.php"; ?><i class="fa fa-lock"></i>Logout</a></li>
+									<li><a href="<?php echo BASE_URL . '/logout.php' ?>"; ?><i class="fa fa-lock"></i>Logout</a></li>
 								
 								<?php else: ?>
-									<li><a href="#"><i class="fa fa-user"></i> Account</a></li>
-									<li><a href="#"><i class="fa fa-star"></i> Wishlist</a></li>
-									<li><a href="cart.html"><i class="fa fa-shopping-cart"></i> Cart</a></li>
 									<li><a href="contact-us.html">Contact</a></li>
 									<li><a href="login.php"; ?><i class="fa fa-lock"></i> Login</a></li>
 								<?php endif; ?>

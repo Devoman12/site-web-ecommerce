@@ -4,6 +4,12 @@ include("path.php");
 include(ROOT_PATH . "/controlers/pro.php");
 
 
+$table1 = 'categorys';
+$table2 = 'brands';
+
+$Categorys = selectAll($table1);
+$Brands = selectAll($table2);
+
 ?>
 
 <!DOCTYPE html>
@@ -59,7 +65,6 @@ include(ROOT_PATH . "/controlers/pro.php");
 					</select>
 				</div>
 
-
                 <div class="form-group col-md-6">
 					<h5>condition</h5>
                     <select name="condition">
@@ -68,21 +73,23 @@ include(ROOT_PATH . "/controlers/pro.php");
                         <option value="Other" >Other</option>
 					</select>
 				</div>
-                
-                <div class="form-group col-md-6">
+
+				<div class="form-group col-md-6">
 					<h5>brand</h5>
                     <select name="brand">
-						<option value="nike" >nike</option>
-                        <option value="adidas" >adidas</option>
-					</select>
+                    	<?php foreach($Brands as $key => $Brand ): ?>
+                            <option value="<?php echo $Brand['id'] ?>"><?php echo $Brand['brand_name'] ?></option>
+                        <?php endforeach; ?>
+            		</select>
 				</div>
+
 
                 <div class="form-group col-md-6">
 					<h5>category</h5>
                     <select name="category">
-						<option value="women" >women</option>
-                        <option value="man" >man</option>
-                        <option value="kids" >kids</option>
+					<?php foreach($Categorys as $key => $Category ): ?>
+                            <option value="<?php echo $Category['id'] ?>"><?php echo $Category['category_name'] ?></option>
+                    <?php endforeach; ?>
 					</select>
 				</div>
 
@@ -157,9 +164,8 @@ include(ROOT_PATH . "/controlers/pro.php");
 						<td><?php echo $product['name'] ?></td>
 						<td><?php echo $product['price'] ?></td>
 						<td><?php echo $product['condition'] ?></td>
-						<td><?php echo $product['category'] ?></td>
-						<td><?php echo $product['brand'] ?></td>
-
+						<td><?php echo(selectOne($table1, ['id' => $product['category']])['category_name']);  ?></td>
+						<td><?php echo(selectOne($table2, ['id' => $product['brand']])['brand_name']); ?></td>
 						<?php if($product['availability']): ?>
                             <td><a href="edit.php?availability=0&p_id=<?php echo $product['id']; ?>" class="unpublish">yes</a></td>
                         <?php else: ?>

@@ -54,8 +54,10 @@ if (isset($_POST['add'])){
             $price = $_POST['price'];
             $availability = $_POST['availability'];
             $condition = $_POST['condition'];
+
             $brand = $_POST['brand'];
             $category = $_POST['category'];
+            
             $image = time() . '_' . $_FILES['pro_image']['name'];
 
             $sql = "INSERT INTO $table (`id`, `name`, `price`, `image`, `availability`, `condition`, `brand`, `category`) VALUES

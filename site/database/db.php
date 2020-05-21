@@ -4,6 +4,14 @@ session_start();
 require('connect.php');
 
 
+$table1 = 'categorys';
+$table2 = 'brands';
+
+$Categorys = selectAll($table1);
+$Brands = selectAll($table2);
+
+
+
 //Hadi lii katbe3 les value li kayjiw ghii temp
 function Pri($value){ 
     echo "<pre>", print_r($value, true), "<pre>";
@@ -122,6 +130,20 @@ function delate($table, $id){
     }
     mysqli_close($conn);
 }
+
+
+
+function NewProducts(){
+    global $conn;
+    $sql = "SELECT p.*, c.category_name
+            FROM products AS p JOIN categorys AS c ON p.category=c.id
+            WHERE p.availability = ? ORDER BY ID DESC LIMIT 6 ;";
+
+    $stmt = executeQuery($sql, ['availability' => 1]);
+    $r = $stmt->get_result()->fetch_all(MYSQLI_ASSOC);
+    return $r;
+}
+
 
 
 

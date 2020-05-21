@@ -1,11 +1,7 @@
 <div class="brands-name">
     <ul class="nav nav-pills nav-stacked">
-        <li><a href="#"> <span class="pull-right">(50)</span>Acne</a></li>
-		<li><a href="#"> <span class="pull-right">(56)</span>Grüne Erde</a></li>
-		<li><a href="#"> <span class="pull-right">(27)</span>Albiro</a></li>
-		<li><a href="#"> <span class="pull-right">(32)</span>Ronhill</a></li>
-		<li><a href="#"> <span class="pull-right">(5)</span>Oddmolly</a></li>
-		<li><a href="#"> <span class="pull-right">(9)</span>Boudestijn</a></li>
-		<li><a href="#"> <span class="pull-right">(100)</span>Rösch creative culture</a></li>
+	<?php foreach($Brands as $key => $Brand): ?>
+		<li><a href="#"> <span class="pull-right">(<?php echo count(selectAll('products', ['brand' => $Brand['id']]));?>)</span><?php echo $Brand['brand_name'] ?></a></li>
+    <?php endforeach ;?>
 	</ul>
 </div>
