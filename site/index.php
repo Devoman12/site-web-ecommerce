@@ -4,6 +4,10 @@ include("path.php");
 include(ROOT_PATH . "/controlers/register.php");
 
 
+
+$table = 'products';
+$products = NewProducts($table, ['availability' => 1]);
+
 ?>
 
 
@@ -20,6 +24,7 @@ include(ROOT_PATH . "/controlers/register.php");
 <!--header-->
 <?php include(ROOT_PATH . "/includs/header.php");?>
 <!--/header-->
+
 	<!--slider-->
 	<?php include(ROOT_PATH . "/includs/slider.php");?>
     <!--/slider-->
@@ -32,6 +37,7 @@ include(ROOT_PATH . "/controlers/register.php");
 						<h2>Category</h2>
                         <?php include(ROOT_PATH . "/includs/leftbar/Category.php");?>
                         <!--/category-products-->
+
                         <!--brands_products-->
 						<div class="brands_products">
 							<h2>Brands</h2>
@@ -47,6 +53,9 @@ include(ROOT_PATH . "/controlers/register.php");
 				</div>
 				
 				<div class="col-sm-9 padding-right">
+				<div class="features_items">
+				<h2 class="title text-center">New Items</h2>
+    
                     <!--features_items-->
 					<?php include(ROOT_PATH . "/includs/content/features_items.php");?>
 					<!--features_items-->

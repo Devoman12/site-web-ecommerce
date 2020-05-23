@@ -31,7 +31,7 @@
 				<div class="row">
 					<div class="col-sm-4">
 						<div class="logo pull-left">
-							<a href="index.php"><img src="images/home/logo.png" alt="" /></a>
+							<a href="index.php"><img src="images/home/logo111.png" alt="" /></a>
 						</div>
 					</div>
 					
@@ -48,6 +48,7 @@
 									<li><a href="<?php echo BASE_URL . '/logout.php' ?>"; ?><i class="fa fa-lock"></i>Logout</a></li>
 								
 								<?php else: ?>
+									<li><a href="shop.php">SHOW ALL PRODUCTS</a></li>
 									<li><a href="contact-us.html">Contact</a></li>
 									<li><a href="login.php"; ?><i class="fa fa-lock"></i> Login</a></li>
 								<?php endif; ?>

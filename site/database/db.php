@@ -132,19 +132,15 @@ function delate($table, $id){
 }
 
 
-
 function NewProducts(){
     global $conn;
-    $sql = "SELECT p.*, c.category_name
+    $sql = "SELECT p.*, c.category_name, b.brand_name
             FROM products AS p JOIN categorys AS c ON p.category=c.id
+            JOIN brands AS b ON p.brand=b.id
             WHERE p.availability = ? ORDER BY ID DESC LIMIT 6 ;";
 
     $stmt = executeQuery($sql, ['availability' => 1]);
     $r = $stmt->get_result()->fetch_all(MYSQLI_ASSOC);
     return $r;
 }
-
-
-
-
 
