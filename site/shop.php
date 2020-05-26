@@ -118,7 +118,14 @@ if(isset($_GET['id_p'])){
 							
 							<div class="choose">
 								<ul class="nav nav-pills nav-justified">
-									<li><a href="#"><i class="fa fa-plus-square"></i>Add to compare</a></li>
+									<li>
+										<a 
+											href="<?php echo BASE_URL . '/productDitails.php?product_id=' . $product['id'] ; ?>">
+											ditails
+										</a>
+									</li>
+
+
 								</ul>
 							</div>
 							
