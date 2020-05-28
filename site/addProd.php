@@ -10,6 +10,7 @@ $table2 = 'brands';
 $Categorys = selectAll($table1);
 $Brands = selectAll($table2);
 
+
 ?>
 
 <!DOCTYPE html>
@@ -30,15 +31,11 @@ $Brands = selectAll($table2);
 				<p></p>
 			</div>
 
-			<div >
-				<h2>Statistics</h2>
-			</div>
-
-
-            <div class="register-req">
-				<p></p>
-			</div>
-			<div >
+			<!--statistics-->
+			<?php include(ROOT_PATH . "/includs/statistics.php");?>
+			<!--/statistics-->
+			
+			<div class="col-md-12">
 				<h2>Add Product</h2>
 			</div>
 

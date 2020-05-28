@@ -21,10 +21,9 @@
 			<div class="choose">
 			    <ul class="nav nav-pills nav-justified">
 					<li><a href="<?php echo BASE_URL . '/shop.php?C_id=' . $Category['id'] . '&name=' . $Category['category_name']; ?>"><i class="fa"></i><?php echo $product['category_name'] ?></a></li>
-				    <li><a href="#"><i class="fa fa-plus-square"></i>Detailes</a></li>
+					<li><a href="<?php echo BASE_URL . '/productDitails.php?product_id=' . $product['id'] ; ?>"><i class="fa fa-plus-square"></i>Detailes</a></li>
 			    </ul>
 			</div>
-			
 		</div>
 	</div>
 	<?php endforeach; ?>

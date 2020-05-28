@@ -42,11 +42,14 @@
 						<div class="shop-menu pull-right">
 							<ul class="nav navbar-nav">
 								<?php if (isset($_SESSION['id'])): ?>
+									<?php if ($_SESSION['admin']): ?>
+										<li><a href="<?php echo BASE_URL . '/dashboard.php' ?>">DASHBORD</a></li>
+									<?php endif; ?>
 									<li><a href="#"><i class="fa fa-user"></i> <?php echo $_SESSION['name']; ?></a></li>
 									<li><a href="#"><i class="fa fa-star"></i> Wishlist</a></li>
 									<li><a href="contact-us.html">Contact</a></li>
 									<li><a href="<?php echo BASE_URL . '/logout.php' ?>"; ?><i class="fa fa-lock"></i>Logout</a></li>
-								
+
 								<?php else: ?>
 									<li><a href="shop.php">SHOW ALL PRODUCTS</a></li>
 									<li><a href="contact-us.html">Contact</a></li>

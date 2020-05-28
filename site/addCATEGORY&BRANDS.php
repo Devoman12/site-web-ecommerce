@@ -24,13 +24,10 @@ include(ROOT_PATH . "/controlers/categoryANDbrands.php");
 				<p></p>
 			</div>
 
-			<div >
-				<h2>Statistics</h2>
-			</div>
-
-            <div class="register-req">
-				<p></p>
-			</div>
+			<!--statistics-->
+			<?php include(ROOT_PATH . "/includs/statistics.php");?>
+			<!--/statistics-->
+			
 			<div >
 				<h2>Add CATEGORY OR  BRANDS</h2>
 			</div>

@@ -30,7 +30,7 @@ function Login($user){
     $_SESSION['type'] = 'success';
     
     if ($_SESSION['admin']){
-        header('location: ' . BASE_URL . '/admin/dashboard.php');
+        header('location: ' . BASE_URL . '/dashboard.php');
         //header('location: ' . BASE_URL . '/admin/posts/indx.php');
     }
     else{

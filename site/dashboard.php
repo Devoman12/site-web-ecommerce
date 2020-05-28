@@ -4,6 +4,9 @@ include("path.php");
 include(ROOT_PATH . "/controlers/pro.php");
 
 
+
+
+
 ?>
 
 <!DOCTYPE html>
@@ -24,14 +27,9 @@ include(ROOT_PATH . "/controlers/pro.php");
 				<p></p>
 			</div>
 
-			<div >
-				<h2>Statistics</h2>
-			</div>
-
-
-            <div class="register-req">
-				<p></p>
-			</div>
+			<!--statistics-->
+			<?php include(ROOT_PATH . "/includs/statistics.php");?>
+			<!--/statistics-->
 
 			<div class="col-md-2">
                 <a href="<?php echo BASE_URL . '/addProd.php' ?>" class="button">addProd.php</a>
@@ -42,7 +40,7 @@ include(ROOT_PATH . "/controlers/pro.php");
 			</div>
 
             <div class="col-md-2">
-                <a href="<?php echo BASE_URL . '/users.php' ?>" class="button">users</a>
+                <a href="<?php echo BASE_URL . '/addusers.php' ?>" class="button">users</a>
 			</div>
 
             <div class="col-md-2">

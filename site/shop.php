@@ -119,8 +119,7 @@ if(isset($_GET['id_p'])){
 							<div class="choose">
 								<ul class="nav nav-pills nav-justified">
 									<li>
-										<a 
-											href="<?php echo BASE_URL . '/productDitails.php?product_id=' . $product['id'] ; ?>">
+										<a href="<?php echo BASE_URL . '/productDitails.php?product_id=' . $product['id'] ; ?>">
 											ditails
 										</a>
 									</li>
