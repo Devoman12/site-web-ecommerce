@@ -31,22 +31,19 @@ include(ROOT_PATH . "/controlers/pro.php");
 			<?php include(ROOT_PATH . "/includs/statistics.php");?>
 			<!--/statistics-->
 
-			<div class="col-md-2">
+			<div class="col-md-2 btn btn-primary">
                 <a href="<?php echo BASE_URL . '/addProd.php' ?>" class="button">addProd.php</a>
 			</div>
 
-            <div class="col-md-2">
+            <div class="col-md-2 btn btn-primary">
                 <a href="<?php echo BASE_URL . '/addCATEGORY&BRANDS.php' ?>" class="button">CATEGORY & BRANDS</a>
 			</div>
 
-            <div class="col-md-2">
+            <div class="col-md-2 btn btn-primary">
                 <a href="<?php echo BASE_URL . '/addusers.php' ?>" class="button">users</a>
 			</div>
 
-            <div class="col-md-2">
-                <a href="<?php echo BASE_URL . '/addProd.php' ?>" class="button">addProd.php</a>
-			</div>
-
+    
 
 		</div>
 	</section> <!--/#cart_items-->

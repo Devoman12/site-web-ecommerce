@@ -37,7 +37,9 @@
 					
 					<div class="col-sm-8">
 						<div class="search_box">
-							<input type="text" placeholder="Search"/>
+							<form action="shop.php" method="post">
+								<input type="text" name="search-term" class="text-input" placeholder="Serach...">
+							</form>
 						</div>
 						<div class="shop-menu pull-right">
 							<ul class="nav navbar-nav">
@@ -47,6 +49,7 @@
 									<?php endif; ?>
 									<li><a href="#"><i class="fa fa-user"></i> <?php echo $_SESSION['name']; ?></a></li>
 									<li><a href="#"><i class="fa fa-star"></i> Wishlist</a></li>
+									<li><a href="shop.php">SHOW ALL PRODUCTS</a></li>
 									<li><a href="contact-us.html">Contact</a></li>
 									<li><a href="<?php echo BASE_URL . '/logout.php' ?>"; ?><i class="fa fa-lock"></i>Logout</a></li>
 

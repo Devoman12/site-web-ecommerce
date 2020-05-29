@@ -30,6 +30,12 @@ elseif (isset($_GET['C_id'])) {
 	$titel = $_GET['name'];
 }
 
+elseif (isset($_POST['search-term'])){
+	
+	$products = SE($_POST['search-term']);
+	
+}
+
 
 if(isset($_GET['id_p'])){
 	pri($_SESSION);

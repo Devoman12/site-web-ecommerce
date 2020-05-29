@@ -12,6 +12,13 @@ include(ROOT_PATH . "/controlers/register.php");
 
 <body>
 	<header id="header"><!--header-->
+	
+
+
+	<div class="logo">
+		<a href="index.php"><img src="images/home/logo.png" alt="" /></a>
+	</div>
+
 
 	</header><!--/header-->
 	

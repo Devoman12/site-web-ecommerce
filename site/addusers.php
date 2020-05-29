@@ -120,13 +120,13 @@ $users = selectAll($table1);
 						<td><?php echo $user['email'] ?></td>
 						
 						<?php if($user['admin']): ?>
-                            <td><a href="edit.php?availability=0&p_id=<?php echo $user['id']; ?>" class="unpublish">yes</a></td>
+                            <td><a href="editeUser.php?admin=0&U_id=<?php echo $user['id']; ?>" class="unpublish">yes</a></td>
                         <?php else: ?>
-                            <td><a href="edit.php?availability=1&p_id=<?php echo $user['id']; ?>" class="publish">no</a></td>
+                            <td><a href="editeUser.php?admin=1&U_id=<?php echo $user['id']; ?>" class="publish">no</a></td>
 						<?php endif; ?>
 
-						<td><a href="edit.php?id=<?php echo $product['id']; ?>" class="edit">edite</a></td>
-                        <td><a href="edit.php?delate_id=<?php echo $product['id']; ?>" class="Delate">Delate</a></td>
+						<td><a href="editeUser.php?id=<?php echo $user['id']; ?>" class="edit">edite</a></td>
+                        <td><a href="editeUser.php?delate_id=<?php echo $user['id']; ?>" class="Delate">Delate</a></td>
                     </tr>
                 <?php endforeach ;?>
                 </tbody>

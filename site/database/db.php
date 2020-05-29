@@ -144,3 +144,17 @@ function NewProducts(){
     return $r;
 }
 
+
+function SE($term){
+    global $conn;
+    $S = '%' . $term . '%';
+    $sql = "SELECT p.*, b.brand_name, c.category_name FROM products AS p 
+    JOIN brands AS b ON p.brand=b.id 
+    JOIN categorys AS c ON p.category=c.id 
+    WHERE p.availability = ? AND p.name LIKE ? OR c.category_name LIKE ? OR b.brand_name LIKE ?;";
+    
+    $stmt = executeQuery($sql, ['availability' => 1, 'name' => $S, 'category_name' => $S, 'brand_name' => $S]);
+    $r = $stmt->get_result()->fetch_all(MYSQLI_ASSOC);
+    return $r;
+
+}
