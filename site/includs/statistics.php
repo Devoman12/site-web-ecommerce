@@ -6,6 +6,7 @@ $products = selectAll('products');
 
 
 ?>
+
 <div class="form-group col-md-12">
 	<h2>Statistics</h2>
 </div>

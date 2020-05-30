@@ -34,34 +34,35 @@
 							<a href="index.php"><img src="images/home/logo.png" alt="" /></a>
 						</div>
 					</div>
-					
-					<div class="col-sm-8">
-						<div class="search_box">
-							<form action="shop.php" method="post">
-								<input type="text" name="search-term" class="text-input" placeholder="Serach...">
-							</form>
-						</div>
+
+					<div class="col-sm-12">
 						<div class="shop-menu pull-right">
 							<ul class="nav navbar-nav">
 								<?php if (isset($_SESSION['id'])): ?>
 									<?php if ($_SESSION['admin']): ?>
 										<li><a href="<?php echo BASE_URL . '/dashboard.php' ?>">DASHBORD</a></li>
 									<?php endif; ?>
-									<li><a href="#"><i class="fa fa-user"></i> <?php echo $_SESSION['name']; ?></a></li>
-									<li><a href="#"><i class="fa fa-star"></i> Wishlist</a></li>
-									<li><a href="shop.php">SHOW ALL PRODUCTS</a></li>
-									<li><a href="contact-us.html">Contact</a></li>
-									<li><a href="<?php echo BASE_URL . '/logout.php' ?>"; ?><i class="fa fa-lock"></i>Logout</a></li>
+									<li><a href="<?php echo BASE_URL . '/compet.php'; ?>"><i class="fa fa-user"></i> <?php echo $_SESSION['name']; ?></a></li>
+									<li><a href="<?php echo BASE_URL . '/cart.php'; ?>"><i class="fa fa-star"></i>my Cart</a></li>
+									<li><a href="<?php echo BASE_URL . '/shop.php'; ?>">SHOW ALL PRODUCTS</a></li>
+									<li><a href="<?php echo BASE_URL . '/contact.php'; ?>">Contact</a></li>
+									<li><a href="<?php echo BASE_URL . '/logout.php'; ?>"><i class="fa fa-lock"></i>Logout</a></li>
 
 								<?php else: ?>
 									<li><a href="shop.php">SHOW ALL PRODUCTS</a></li>
-									<li><a href="contact-us.html">Contact</a></li>
+									<li><a href="contact.php">Contact</a></li>
 									<li><a href="login.php"; ?><i class="fa fa-lock"></i> Login</a></li>
 								<?php endif; ?>
-								
 							</ul>
 						</div>
 					</div>
+					
+					<div class="search_box col-sm-6 ">
+						<form action="shop.php" method="post">
+							<input type="text" name="search-term" class="text-input" placeholder="Serach...">
+						</form>
+					</div>
+
 				</div>
 			</div>
 		</div>
